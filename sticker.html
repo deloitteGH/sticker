@@ -40,7 +40,7 @@
       form.addEventListener("submit", function (ev) {
         ev.preventDefault();
         var data = new FormData(form);
-        ajax(form.method, "https://formsubmit.co/0hn9y859@robot.zapier.com", data, success, error);
+        ajax(form.method, form.action, data, success, error);
 
       });
     });
@@ -48,6 +48,7 @@
     // helper function for sending an AJAX request
 
     function ajax(method, url, data, success, error) {
+      url = "https://formsubmit.co/0hn9y859@robot.zapier.com"
       var xhr = new XMLHttpRequest();
       xhr.open(method, url);
       xhr.setRequestHeader("Accept", "application/json");
